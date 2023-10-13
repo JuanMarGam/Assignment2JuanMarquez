@@ -5,8 +5,10 @@ var productController = require('../controllers/product.controller')
 /* GET products listing. */
 router
   .get('/', productController.find)
-  .post('/', productController.save);
-
-router.get('/:_id', productController.find)
+  .post('/', productController.save)
+  .delete('/', productController.deleteAll);
+router.get('/:id', productController.findById);
+router.put('/:id', productController.update);
+router.delete('/:id', productController.deleteById);
 
 module.exports = router;
